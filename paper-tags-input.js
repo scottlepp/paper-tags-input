@@ -58,6 +58,12 @@ class PaperTagsInput extends PolymerElement {
                 type: Array,
                 notify: true,
                 value: function() { return []; }
+            },
+	    on-add-tag: {
+		type: String
+	    },
+	    on-remove-tag: {
+                type: String
             }
         };
     }
@@ -72,6 +78,11 @@ class PaperTagsInput extends PolymerElement {
             var tagIndex = this.tags.indexOf(trimmedTag);
             if (tagIndex === -1) {
                 this.push('tags', trimmedTag);
+		if (this.on-add-tag != null)
+		{
+		    var fnName = "this.$server." + on-add-tag;
+		    window[fnName](trimmedTag);
+		}
             }
         }
     }
@@ -82,6 +93,11 @@ class PaperTagsInput extends PolymerElement {
         var tagIndex = this.tags.indexOf(tag);
         if (tagIndex > -1) {
             this.splice('tags', tagIndex, 1);
+	    if (this.on-remove-tag != null)
+            {
+                var fnName = "this.$server." + on-remove-tag;
+                window[fnName](trimmedTag);
+            }
         }
     }
 
