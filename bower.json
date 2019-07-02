@@ -1,0 +1,22 @@
+{
+  "name": "@belomx/paper-tags-input",
+  "description": "Material Design input control for a collection of tags",
+  "main": "paper-tags-input.js",
+  "authors": [
+    "belomx"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "tags",
+    "vaadin",
+    "webcomponent"
+  ],
+  "homepage": "https://github.com/belomx/paper-tags-input",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
