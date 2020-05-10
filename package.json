@@ -1,9 +1,9 @@
 {
   "description": "Material Design input control for a collection of tags",
-  "name": "@belomx/paper-tags-input",
-  "version": "3.1.7",
+  "name": "@scottlepp/paper-tags-input",
+  "version": "3.1.8",
   "license": "MIT",
-  "repository": "github:belomx/paper-tags-input",
+  "repository": "github:scottlepp/paper-tags-input",
   "resolutions": {
     "inherits": "2.0.3",
     "samsam": "1.1.3",
