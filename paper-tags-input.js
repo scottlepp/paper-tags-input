@@ -59,7 +59,7 @@ class PaperTagsInput extends PolymerElement {
                 notify: true,
                 value: function() { return []; }
             },
-	    onAddtag: {
+	    onAddTag: {
 		type: String
 	    },
 	    onRemoveTag: {
@@ -103,10 +103,12 @@ class PaperTagsInput extends PolymerElement {
 
     _onTagRemoveClicked(e) {
         this.removeTag(e.model.item);
+        this.dispatchEvent(new CustomEvent('onRemove', {detail: {tag: e.model.item}}));
     }
     _onInputKeydown(e) {
         if (e.keyCode === 13) {
             this.addTag(e.target.value.toLowerCase());
+            this.dispatchEvent(new CustomEvent('onAdd', {detail: {tag: e.target.value.toLowerCase()}}));
             e.target.value = '';
         }
     }
